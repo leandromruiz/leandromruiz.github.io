@@ -41,13 +41,63 @@
         <h1>Hi, I'm Alejandro Muñoz</h1>
         <p>Frontend Developer, UX/UI Designer and SEO Especialist</p>
     </div>
+    <!-- about -->
     <div id="about">
         <div class="container">
             <div class="row">
-                <div class="about-col-1"></div>
-                <div class="about-col-2"></div>
+                <div class="about-col-1">
+                    <img src="/img/profile photo.jpeg" alt="Alejandro Muñoz">
+                </div>
+                <div class="about-col-2">
+                    <h2 class="sub-title">About Me</h2>
+                    <p>Technology enthusiast. I help companies and entrepreneurs in the development of businesses in the digital economy, specifically in the design and development of user-friendly websites optimized for search engines.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>SEO</span><br>Search Engine Optimization</li>
+                            <li><span>UI/UX</span><br>Web Design/App Interface</li>
+                            <li><span>Web Development</span><br>Creating Web Apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Reservandonos</span><br>Inbound Manager</li>
+                            <li><span>Automatized Services</span><br>Web Team Lead</li>
+                            <li><span>Vakkeros Agency</span><br>SEO Especialist</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Platzi</span><br>Online Courses</li>
+                            <li><span>Open National University</span><br>Mathematics Degree</li>
+                            <li><span>Coursera</span><br>Google Certifications</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
 </body>
 </html>
